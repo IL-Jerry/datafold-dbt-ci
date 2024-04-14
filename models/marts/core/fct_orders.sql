@@ -4,9 +4,9 @@ with payments as (
 ),
 
 orders as (
-
+    -- Filtering orders to March 2018
     select * from {{ ref('stg_orders')}}
-
+    where order_date >= '2018-03-01' and order_date <= '2018-03-31'
 ),
 
 order_payments as (
